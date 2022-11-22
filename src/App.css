@@ -1,0 +1,71 @@
+
+.container { 
+   flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+   /* padding-left: 12%;
+   padding-right: 12%; */
+}
+.title{
+  margin-bottom: 1% !important;
+  font-size: 4vh !important;
+}
+.search { 
+
+    left: 50%;
+    margin-top: 10vh !important;
+    transform: translate(-50%, -50%);
+    width: 20% !important;
+    
+}
+.data{
+    overflow-x: auto;
+    width: 48%;
+    margin-left: 25vw !important;
+}
+.card {
+    bottom: 0px;
+    background-color: rgb(206, 226, 234) !important;
+    max-width: 30vh;
+    min-width: 23vh; 
+
+}
+
+.weather { 
+    max-height: 96px;
+}
+
+.img { 
+    max-height: 96px !important;
+    max-width: 96px !important;
+    margin: auto !important;
+}
+
+@media (max-width: 770px) {
+    .card {
+        margin: 2% 0 !important
+    }
+    .image { 
+        width: 20%;
+        border: solid 2px black !important
+    }
+}
+
+.style{
+margin: 0.2vh;
+padding: 1vh
+
+}
+
+.logo{
+    flex-grow: "1";
+    cursor: "pointer";
+  }
+  link{
+    text-decoration: "none";
+    color: "white";
+    font-size: "20px";
+
+    }
+    .nav{
+        background-color: rgb(150, 182, 194) !important;
+    }

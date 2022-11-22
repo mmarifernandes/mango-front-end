@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #9B84DE;
+    display: inline-flex;
+    width: 100%;
+}
+
+.title{
+    color: #fff;
+}
+.icon{
+    width: 5vw;
+    height: 5vw;
+}
