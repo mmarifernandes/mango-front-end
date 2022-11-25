@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import { FaBars } from "react-icons/fa";
 // import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
 import './home.css';
-import icon from "../images/mango.png";
+import { getData, insert } from "../Model"
+import Navbar from "../components/navbar"
+
 const Home = () => {
+    useEffect(() => {
+         let items = getData();
+    })
+
+
+
         return (
-            <div className="grid">
-            <div className="block1">
+                <><Navbar /><div className="grid">
+                <div className="block1">
 
-            </div>
+                </div>
 
-            <div className="middle-block">
+                <div className="middle-block">
 
-            </div>
+                </div>
 
-            <div className="block2">
+                <div className="block2">
 
-            </div>
-            </div>
+                </div>
+            </div></>
         )
 }
 
