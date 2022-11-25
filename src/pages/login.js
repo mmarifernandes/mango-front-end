@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
 import './login.css';
+import { Navigate } from "react-router-dom";
 // import { getData, insert } from "./Model.js"
 // import icon from "../images/mango.png";
 import axios from 'axios';
@@ -14,28 +15,31 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
+  const [user, setUser] = useState("");
 
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
       console.log(email, senha)
-      await axios.post(`http://localhost:5000/usuarios/auth`, {
+      let res = await axios.post(`http://localhost:5000/usuarios/auth`, {
         senha: senha,
         email: email,
       });
-
-
+      setUser(res);
+      
     } catch (error) {
+      alert('try again')
       return console.log(error);
     }
   };
-
-
+  
+  
   return (
-
+    
     <div className="grid">
+      {user &&(<Navigate to="/" replace={true}/>)
+  }
       <h1>Entrar</h1>
       < form onSubmit={handleSubmit} encType="multipart/form-data">
         <label>Email:
