@@ -26,6 +26,12 @@ const Login = () => {
         senha: senha,
         email: email,
       });
+      console.log({ data: res.data})
+
+      const { token } = res.data;
+      console.log({ token });
+      axios.defaults.headers.common['Authorization'] = token;
+
       setUser(res);
       
     } catch (error) {

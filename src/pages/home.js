@@ -5,29 +5,40 @@ import React, { useState, useEffect } from "react";
 import './home.css';
 import { getData } from "../Model"
 import Navbar from "../components/navbar"
+import { Navigate } from "react-router-dom";
+
 
 const Home = () => {
 
 
     const [item, setItem] = useState("");
 
-
     useEffect(() => {
          (async () => {
          let items = await getData();
-         setItem(items)
-         console.log(items)
+         if(items){
+             setItem(items)
+
+         }else{
+             
+             <Navigate to="/auth" replace={true} />
+             console.log("erro")
+        }
           })();
         },[item])
-        
+        console.log(res.data)
 
 
         return (
                 <><Navbar /><div className="grid">
-                    {/* <h1>{item.nome}</h1> */}
                 <div className="block1">
 
                 </div>
+                {/* {item? */}
+                    {/* <h1>{item.user.nome}</h1> */}
+                    {/* : */}
+
+                {/* }  */}
 
                 <div className="middle-block">
 
