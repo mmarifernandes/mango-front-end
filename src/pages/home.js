@@ -3,18 +3,28 @@ import React, { useState, useEffect } from "react";
 // import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
 import './home.css';
-import { getData, insert } from "../Model"
+import { getData } from "../Model"
 import Navbar from "../components/navbar"
 
 const Home = () => {
-    useEffect(() => {
-         let items = getData();
-    })
 
+
+    const [item, setItem] = useState("");
+
+
+    useEffect(() => {
+         (async () => {
+         let items = await getData();
+         setItem(items)
+         console.log(items)
+          })();
+        },[item])
+        
 
 
         return (
                 <><Navbar /><div className="grid">
+                    {/* <h1>{item.nome}</h1> */}
                 <div className="block1">
 
                 </div>
