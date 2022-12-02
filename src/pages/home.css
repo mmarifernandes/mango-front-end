@@ -70,5 +70,24 @@
 
 .info h1{
     position: absolute;
+    margin-left: 1vw;
+    font-size: 25px;
 
+}
+.info p{
+     position: absolute;
+    margin-left: 1vw;
+    margin-top: 9vh;
+    width: 40%;
+    height: 20%;
+}
+
+.img-icon{
+    height: 14vw;
+    width: 15vw;
+    margin-left: 2.5vw;
+        margin-right: 2.5vw;
+        margin-top: 1.5vw;
+
+    position: absolute;
 }

@@ -15,21 +15,26 @@ const SignUp = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [foto, setFoto] = useState();
-
+  const [foto, setFoto] = useState([]);
+console.log(foto)
 
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(nome, email, senha, foto)
-      await axios.post(`http://localhost:5000/usuarios/cadastrar`, {
-        nome: nome,
-        email: email,
-        senha: senha,
-        perfil: foto.name,
-
-      });
+      let formData = new FormData();
+        formData.append('imgperfil', foto)
+        formData.append('nome', nome)
+        formData.append('email', email)
+        formData.append('senha', senha)
+      console.log(foto)
+  const config = {
+    headers: {
+      'content-type': 'multipart/form-data'
+    }
+  };
+      console.log(nome, email, senha, {foto})
+      await axios.post(`http://localhost:5000/usuarios/cadastrar`, formData, config);
 
 
     } catch (error) {
@@ -42,7 +47,7 @@ const SignUp = () => {
 
     <div className="grid">
       <h1>Cadastre-se</h1>
-      < form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form onSubmit={handleSubmit}>
         <label>Enter your name:
           <input
             type="text"
