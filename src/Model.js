@@ -3,10 +3,10 @@ import axios from 'axios';
 export async function getData() {
     try {
         const result = await axios.get(`http://localhost:5000/usuarios/home`);
-        console.log(result)
+        // console.log(result)
         return result.data;
     } catch (error) {
-        console.log("teste")
+        // console.log("teste")
         return null;
     }
 }

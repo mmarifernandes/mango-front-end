@@ -5,48 +5,51 @@ import React, { useState, useEffect } from "react";
 import './home.css';
 import { getData } from "../Model"
 import Navbar from "../components/navbar"
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
 
-
+    
     const [item, setItem] = useState("");
-
+    const navigate = useNavigate();
     useEffect(() => {
-         (async () => {
-         let items = await getData();
-         if(items){
-             setItem(items)
-
-         }else{
-             
-             <Navigate to="/auth" replace={true} />
-             console.log("erro")
-        }
+        (async () => {
+            let items = await getData();
+            if(items){
+                setItem(items)
+                console.log(items)
+            }else{
+                console.log("erro")
+                return navigate('/auth')
+            }
+ 
           })();
-        },[item])
-        console.log(res.data)
+        },[item, navigate])
 
 
         return (
-                <><Navbar /><div className="grid">
-                <div className="block1">
 
-                </div>
-                {/* {item? */}
-                    {/* <h1>{item.user.nome}</h1> */}
-                    {/* : */}
+            <><Navbar /><div className="grid">
+            {item &&(
+                <><div className="block1">
+                    </div>
+                    <div className="info">
+                    <h1>{item.user.nome}</h1>
+                    </div>
+                    <div className="middle-block">
 
-                {/* }  */}
+            {item.dex.map((itens) => (
+                        <div className="style-itens">
+                <><><img src={"../images/book.jpg"} className="img-item" alt="mango icon" /></><p>{itens.book.autor}</p><p>{itens.book.titulo}</p></>
+                
+      </div>
+                ))}
+                        </div><div className="block2">
 
-                <div className="middle-block">
-
-                </div>
-
-                <div className="block2">
-
-                </div>
+                        </div></>
+                    )}
+                    
             </div></>
         )
 }
