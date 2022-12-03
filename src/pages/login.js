@@ -47,7 +47,7 @@ const Login = () => {
       {user &&(<Navigate to="/" replace={true}/>)
   }
       <h1>Entrar</h1>
-      < form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label>Email:
           <input
             type="email"

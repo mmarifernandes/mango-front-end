@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 // import { FaBars } from "react-icons/fa";
 // import { NavLink } from "react-router-dom";
 // import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 import './signup.css';
-// import { getData, insert } from "./Model.js"
-// import icon from "../images/mango.png";
 import axios from 'axios';
 
 const SignUp = () => {
-  // useEffect(() => {
-  //      let items = getData();
-  // })
 
+  const navigate = useNavigate();
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -36,7 +34,7 @@ console.log(foto)
       console.log(nome, email, senha, {foto})
       await axios.post(`http://localhost:5000/usuarios/cadastrar`, formData, config);
 
-
+    navigate('/auth');
     } catch (error) {
       return console.log(error);
     }

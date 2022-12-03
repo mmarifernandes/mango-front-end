@@ -19,3 +19,21 @@
     width: 5vw;
     height: 5vw;
 }
+
+.imgperfil{
+    width: 3vw;
+    height: 3vw;
+    padding: 15px;
+    left: 60%;
+    position: relative;
+}
+
+.nome{
+   left: 59%;
+    position: relative;  
+        padding: 15px;
+        padding-top: 20px;
+        color: #fff;
+        font-size: 10px;
+
+}
