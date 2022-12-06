@@ -37,3 +37,40 @@
         font-size: 10px;
 
 }
+
+
+.list {
+    display: flex;
+    /* height: 60vh;
+    width: 30%; */
+    left: 42%;
+    padding-top: 3vh;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    position: absolute;
+    /* background-color: #3BB777; */
+}
+
+/* h1 {
+    margin: 10px;
+    font-size: 40px;
+    color: rgb(1, 1, 59);
+} */
+
+.search2 {
+    width: 150%;
+    background-color: #fff;
+    border-radius: 14px;
+    height: 5vh;
+}
+
+ul li {
+    font-size: 20px;
+    background-color: #9B84DE;
+}
+
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root {
+    height: 5vh !important;
+    border-radius: 14px !important;
+}

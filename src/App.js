@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route}
 import Home from "./pages/home.js"
 import SignUp from "./pages/signup.js"
 import Login from "./pages/login.js"
+import Collection from "./pages/collection.js"
+import Profile from "./pages/profile.js"
 
 function App() {
 return (
@@ -14,6 +16,8 @@ return (
         <Route exact path='/cadastrar' element={<SignUp />} />
         <Route exact path='/auth' element={<Login />} />
         <Route exact path='/' element={<Home />} />
+        <Route exact path='/collection' element={<Collection />} />
+        <Route exact path="/profile/:email" element={<Profile />}/>
         {/* <Route path='/sign-up' element={<SignUp/>} /> */}
     </Routes>
     </Router>

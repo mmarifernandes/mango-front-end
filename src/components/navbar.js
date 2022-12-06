@@ -5,6 +5,8 @@ import React, {useEffect, useState} from "react";
 import './navbar.css';
 import icon from "../images/mango.png";
 import { getData } from "../Model";
+import TextField from "@mui/material/TextField";
+import List from "../components/list"
 
 
 const Navbar = () => {
@@ -24,13 +26,30 @@ useEffect(() => {
     }
   })();
 }, [user]);
-
+ const [inputText, setInputText] = useState("");
+ let inputHandler = (el) => {
+   //convert input text to lower case
+   var lowerCase = el.target.value.toLowerCase();
+   setInputText(lowerCase);
+ };
 
 
     return (
     <nav className="navbar">
     <img src={icon} className="icon" alt="mango icon"/>
     <h1 className="title">Mango</h1>
+     <div className="list">
+      <div className="search2">
+        <TextField
+          id="outlined-basic"
+          onChange={inputHandler}
+          variant="outlined"
+          fullWidth
+          label="Search"
+        />
+      </div>
+      <List input={inputText} />
+    </div>
     {user?
     <><img
             src={`data:image/png;base64,${user.user.imgperfil}`}

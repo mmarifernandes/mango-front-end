@@ -10,7 +10,7 @@ import Modal from '../components/modal';
 
 
 
-const Home = () => {
+const Profile = () => {
 
 
 
@@ -96,4 +96,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Profile;

@@ -11,6 +11,18 @@ export async function getData() {
     }
 }
 
+export async function getDataLimited() {
+    try {
+        const result = await axios.get(`http://localhost:5000/usuarios/limit`);
+        // console.log(result)
+        return result.data;
+    } catch (error) {
+        // console.log("teste")
+        return null;
+    }
+}
+
+
 export async function insert(city, info, data) {
     try {
         await axios.post(`http://localhost:3000/cadastrar`, {
