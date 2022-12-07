@@ -8,18 +8,23 @@
     background-color: #9B84DE;
     display: inline-flex;
     width: 100%;
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .title{
     color: #fff;
+    cursor: pointer;
 }
 .icon{
     width: 5vw;
     height: 5vw;
+    cursor: pointer;
 }
-
+title:hover{
+    color: aqua !important;
+}
 .imgperfil{
     width: 3vw;
     height: 3vw;
@@ -47,7 +52,7 @@
     padding-top: 3vh;
     align-items: center;
     flex-direction: column;
-    row-gap: 20px;
+    /* row-gap: 20px; */
     position: absolute;
     /* background-color: #3BB777; */
 }
@@ -60,13 +65,39 @@
 
 .search2 {
     width: 150%;
-    background-color: #fff;
+    background-color: rgb(232, 232, 232);
     border-radius: 14px;
     height: 5vh;
 }
 
 ul li {
-    font-size: 20px;
+    font-size: 15px;
+    /* background-color: #9B84DE; */
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    margin-top: 2vh;
+    padding: 0;
+    width: 140%;
+    z-index: 100 !important;
+    background-color: #bca8ff;
+    border-radius: 10px !important;
+        box-shadow: 0px 4px 4px rgba(85, 85, 85, 0.25);
+
+}
+li{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    line-height: 10px;
+    cursor: pointer;    
+
+    /* text-align: center; */
+
+}
+li:hover{
     background-color: #9B84DE;
 }
 
@@ -74,7 +105,23 @@ ul li {
     height: 5vh !important;
     border-radius: 14px !important;
 }
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    top: -10px !important;
 
+}
+
+.imglist{
+    width: 2.5vw;
+    height: 2.5vw;
+    vertical-align: middle;
+    box-shadow: -4px 0px 0px 0px #f6e01a;
+    margin-right: 5px;
+    border-radius: 5px;
+}
 /* img, h1 {
     cursor: pointer;
 } */
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill {
+    padding: 6.5px 14px !important
+}

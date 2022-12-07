@@ -43,7 +43,12 @@ function navigateCollection(email)  {
     return (
         <ul>
             {filteredData.map((item) => (
-                <li key={item.email} onClick={() => {navigateCollection(item.email)}}>{item.nome}</li>
+                <li key={item.email} onClick={() => {navigateCollection(item.email)}}>  
+                <img
+                src={`data:image/png;base64,${item.imgperfil}`}
+                className="imglist"
+                alt="icon"
+              />{item.nome}</li>
             ))}
         </ul>
     )

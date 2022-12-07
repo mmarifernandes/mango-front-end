@@ -67,7 +67,7 @@ const Modal = ({ setIsOpen }) => {
             X
           </button>
           <div className="modalContent">
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <form id="form" onSubmit={handleSubmit} encType="multipart/form-data">
               <select
                 name="userId"
                 onChange={(e) => setSelected(e.target.value)}
@@ -79,6 +79,8 @@ const Modal = ({ setIsOpen }) => {
                   </option>
                 ))}
               </select>
+              <br></br>
+              <br></br>
               <label>
                 Foto:
                 <input
@@ -87,16 +89,16 @@ const Modal = ({ setIsOpen }) => {
                 />
               </label>
 
-              <button type="submit">Submit</button>
+              {/* <button type="submit">Submit</button> */}
             </form>
           </div>
           <div className="modalActions">
             <div className="actionsContainer">
               <button className="deleteBtn" onClick={() => setIsOpen(false)}>
-                Delete
+                  Cancelar
               </button>
-              <button className="cancelBtn" onClick={() => setIsOpen(false)}>
-                Cancel
+              <button className="cancelBtn" form="form" type="submit">
+                Enviar
               </button>
             </div>
           </div>

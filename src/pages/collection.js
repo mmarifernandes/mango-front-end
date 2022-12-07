@@ -72,7 +72,7 @@ const Collection = () => {
               ))}
               </div>
             </div>
-              <button className="botao2" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
+              <button className="botaoadd" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             
           </>
