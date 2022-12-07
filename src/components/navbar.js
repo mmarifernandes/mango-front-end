@@ -7,6 +7,7 @@ import icon from "../images/mango.png";
 import { getData } from "../Model";
 import TextField from "@mui/material/TextField";
 import List from "../components/list"
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -33,11 +34,18 @@ useEffect(() => {
    setInputText(lowerCase);
  };
 
+   const navigate = useNavigate();
+
+ const navigateCollection = () => {
+   navigate('/')
+ };
 
     return (
     <nav className="navbar">
-    <img src={icon} className="icon" alt="mango icon"/>
-    <h1 className="title">Mango</h1>
+      {/* <div onClick={navigateCollection}> */}
+    <img src={icon} className="icon" alt="mango icon" onClick={navigateCollection}/>
+    <h1 className="title" onClick={navigateCollection}>Mango</h1>
+    {/* </div> */}
      <div className="list">
       <div className="search2">
         <TextField

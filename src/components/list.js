@@ -10,6 +10,7 @@ const [data, setData] = useState([{nome: 'marina', email: 'marina@gamil.com', id
     (async () => {
       let items = await axios.get(`http://localhost:5000/usuarios/list`);
     //   console.log(items)
+    // console.log({ data: items.data})
       if (items) {
         setData(items.data);
         // console.log(items);
@@ -19,6 +20,10 @@ const [data, setData] = useState([{nome: 'marina', email: 'marina@gamil.com', id
       }
     })();
   }, [data]);
+
+function navigateCollection(email)  {
+     navigate(`/profile/${email}`)
+ };
 
 
   const filteredData = data.filter((el) => {
@@ -38,7 +43,7 @@ const [data, setData] = useState([{nome: 'marina', email: 'marina@gamil.com', id
     return (
         <ul>
             {filteredData.map((item) => (
-                <li key={item.email}>{item.nome}</li>
+                <li key={item.email} onClick={() => {navigateCollection(item.email)}}>{item.nome}</li>
             ))}
         </ul>
     )

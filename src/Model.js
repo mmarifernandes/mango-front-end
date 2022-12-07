@@ -21,7 +21,16 @@ export async function getDataLimited() {
         return null;
     }
 }
-
+export async function getDataEmail(email) {
+    try {
+        const result = await axios.get(`http://localhost:5000/usuarios/${email}`);
+        // console.log(result)
+        return result.data;
+    } catch (error) {
+        // console.log("teste")
+        return null;
+    }
+}
 
 export async function insert(city, info, data) {
     try {

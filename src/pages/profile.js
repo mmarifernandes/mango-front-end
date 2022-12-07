@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import "./home.css";
-import { getDataLimited } from "../Model";
+import { getDataEmail} from "../Model";
 import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import Modal from '../components/modal';
-
+import { useParams } from "react-router-dom";
 
 
 
@@ -17,20 +17,23 @@ const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState("");
   const navigate = useNavigate();
+  let { email } = useParams();
+
+
   useEffect(() => {
     (async () => {
-      let items = await getDataLimited();
+      let items = await getDataEmail(email);
       if (items) {
         setItem(items);
-        // console.log(items);
+        console.log(items);
       } else {
         console.log("erro");
         return navigate("/auth");
       }
     })();
-  }, [item, navigate]);
+  }, [email, item, navigate]);
 
-
+// console.log(email)
   const navigateCollection = () => {
     navigate('/collection')
   };
@@ -84,8 +87,7 @@ const Profile = () => {
               </div>
             <p onClick={navigateCollection} className="vermais">Ver coleção completa</p>
             </div>
-              <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
-              {isOpen && <Modal setIsOpen={setIsOpen} />}
+          
             <div className="block2">
             </div>
           </>

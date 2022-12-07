@@ -83,6 +83,8 @@ const Home = () => {
               ))}
               </div>
             <p onClick={navigateCollection} className="vermais">Ver coleção completa</p>
+                        {/* <p onClick={navigate("/profile/marina@marina.com")} className="vermais">teste</p> */}
+
             </div>
               <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}

@@ -17,7 +17,7 @@ return (
         <Route exact path='/auth' element={<Login />} />
         <Route exact path='/' element={<Home />} />
         <Route exact path='/collection' element={<Collection />} />
-        <Route exact path="/profile/:email" element={<Profile />}/>
+        <Route exact path="/profile/:email" element ={<Profile />}/>
         {/* <Route path='/sign-up' element={<SignUp/>} /> */}
     </Routes>
     </Router>
