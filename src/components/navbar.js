@@ -35,6 +35,9 @@ const Navbar = () => {
   const navigateCollection = () => {
     navigate("/");
   };
+    const navigateSair = () => {
+    navigate('/auth', {replace: true});
+  };
 
   return (
     <nav className="navbar">
@@ -69,6 +72,7 @@ const Navbar = () => {
             alt="icon"
           />
           <p className="nome">{user.user.nome}</p>
+          <p className="exit" onClick={navigateSair}>Sair</p>
         </>
       ) : null}
     </nav>

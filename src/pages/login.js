@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-// import { FaBars } from "react-icons/fa";
-// import { NavLink } from "react-router-dom";
-// import styled from "styled-components";
 import "./login.css";
 import "./util.css";
-
+import icon from "../images/mango.png";
 import { Navigate, useNavigate } from "react-router-dom";
-// import { getData, insert } from "./Model.js"
-// import icon from "../images/mango.png";
 import axios from "axios";
 
 const Login = () => {
-  // useEffect(() => {
-  //      let items = getData();
-  // })
+
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -57,7 +50,14 @@ const Login = () => {
               encType="multipart/form-data"
               className="login100-form validate-form p-l-55 p-r-55 p-t-178"
             >
-              <span className="login100-form-title">Sign In</span>
+              <span className="login100-form-title">Sign In
+              <img
+        src={icon}
+        className="icon"
+        alt="mango icon"
+      
+      />
+              </span>
 
               <div className="wrap-input100 validate-input m-b-16">
                 <input

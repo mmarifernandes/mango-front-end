@@ -176,3 +176,21 @@ cursor: pointer;
    margin-left: 2vw;
 
 }
+
+.deletebuttom{
+       position: absolute;
+    margin: 2.5vw;
+    width: 15vw;
+    height: 7vh;
+    color: #000;
+    font-size: 15px;
+    border: none;
+background: #cccccc;
+border-radius: 5px;
+cursor: pointer;
+}
+.iconmini{
+    height: 2.5vh;
+    width: 1.8vw;
+    margin-bottom: -4px;
+}

@@ -8,6 +8,7 @@ import SignUp from "./pages/signup.js"
 import Login from "./pages/login.js"
 import Collection from "./pages/collection.js"
 import Profile from "./pages/profile.js"
+import CollectionProfile from "./pages/collectionprofile.js"
 
 function App() {
 return (
@@ -18,6 +19,8 @@ return (
         <Route exact path='/' element={<Home />} />
         <Route exact path='/collection' element={<Collection />} />
         <Route exact path="/profile/:email" element ={<Profile />}/>
+        <Route exact path="/collection/:email" element ={<CollectionProfile />}/>
+
         {/* <Route path='/sign-up' element={<SignUp/>} /> */}
     </Routes>
     </Router>

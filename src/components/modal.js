@@ -49,6 +49,7 @@ const Modal = ({ setIsOpen }) => {
         },
       };
       await axios.post(`http://localhost:5000/dex/`, formData, config);
+      return alert("Adicionado!");
     } catch (error) {
       return alert("Esse item já está na sua coleção!");
     }

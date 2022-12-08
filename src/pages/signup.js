@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-// import { FaBars } from "react-icons/fa";
-// import { NavLink } from "react-router-dom";
-// import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import icon from "../images/mango.png";
 import "./signup.css";
 import axios from "axios";
 import "./login.css";
 import "./util.css";
+
+
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [nome, setNome] = useState("");
@@ -55,7 +55,13 @@ const SignUp = () => {
               onSubmit={handleSubmit}
               className="login100-form validate-form p-l-55 p-r-55 p-t-178"
             >
-              <span className="login100-form-title">Sign Up</span>
+              <span className="login100-form-title">Sign Up
+                   <img
+        src={icon}
+        className="icon"
+        alt="mango icon"
+      
+      /></span>
 
               <div className="wrap-input100 validate-input m-b-16">
                 <input

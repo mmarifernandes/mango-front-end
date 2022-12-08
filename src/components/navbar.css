@@ -44,6 +44,16 @@ title:hover{
 }
 
 
+.exit{
+   left: 59%;
+    position: relative;  
+        padding: 13px;
+        padding-top: 13px;
+        color: #fff;
+        font-size: 15px;
+
+}
+
 .list {
     display: flex;
     /* height: 60vh;

@@ -32,6 +32,17 @@ export async function getDataEmail(email) {
     }
 }
 
+export async function getAll(email) {
+    try {
+        const result = await axios.get(`http://localhost:5000/usuarios/all/${email}`);
+        // console.log(result)
+        return result.data;
+    } catch (error) {
+        // console.log("teste")
+        return null;
+    }
+}
+
 export async function insert(city, info, data) {
     try {
         await axios.post(`http://localhost:3000/cadastrar`, {

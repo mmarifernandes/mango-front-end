@@ -6,6 +6,7 @@ import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Progress from "../components/progress-bar";
+import data from "../images/data.png";
 
 const Profile = () => {
   const [item, setItem] = useState("");
@@ -26,23 +27,28 @@ const Profile = () => {
   }, [email, item, navigate]);
 
   // console.log(email)
-  const navigateCollection = () => {
-    navigate("/collection");
-  };
+ function navigateCollection(email) {
+   navigate(`/collection/${email}`);
+ }
   return (
     <>
       <Navbar />
       <div className="grid">
         {item && (
-          <>
+          <><>
             <div className="block1">
               <img
                 src={`data:image/png;base64,${item.user.imgperfil}`}
                 className="img-icon"
-                alt="icon"
-              />
+                alt="icon" />
               <hr className="line"></hr>
-              <h3 className="itemtitle">Estatísticas</h3>
+              <h3 className="itemtitle">Estatísticas
+              <img
+                src={data}
+                className="iconmini"
+                alt="icon" />
+              </h3>  
+              <h4 className="iteminfo">Coleção status</h4>
 
               <Progress count={item.total} goal={item.totalitem} />
             </div>
@@ -69,24 +75,22 @@ const Profile = () => {
                         <img
                           src={`data:image/png;base64,${itens.img}`}
                           className="img-item"
-                          alt="mango icon"
-                        />
+                          alt="mango icon" />
                       </>
-                      <p>{itens.book.autor}</p>
                       <p>{itens.book.titulo}</p>
+                      <p>{itens.book.autor}</p>
                     </>
                   </div>
                 ))}
               </div>
-              <p onClick={navigateCollection} className="vermais">
-                Ver coleção completa
-              </p>
+
             </div>
 
             <div className="block2"></div>
-          </>
+          </><button className="botao1" onClick={() => {
+            navigateCollection(email);
+          } }>Ver coleção completa</button></>
         )}
-        {/* <button onClick={navigateCollection}>Ver coleção completa</button> */}
       </div>
     </>
   );

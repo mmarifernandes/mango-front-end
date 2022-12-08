@@ -92,8 +92,8 @@ const Home = () => {
                         alt="mango icon"
                         />
                     </>
-                    <p>{itens.book.autor}</p>
                     <p>{itens.book.titulo}</p>
+                    <p>{itens.book.autor}</p>
                   </>
                 </div>
               ))}
@@ -105,7 +105,7 @@ const Home = () => {
               <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             <div className="block2">
-              <button onClick={deletefunction}>Apagar meu perfil</button>
+              <button className="deletebuttom" onClick={deletefunction}>Deletar conta</button>
             </div>
           </>
         )} 
