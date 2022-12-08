@@ -6,7 +6,7 @@ import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Progress from "../components/progress-bar";
-import data from "../images/data.png";
+// import data from "../images/data.png";
 
 const Profile = () => {
   const [item, setItem] = useState("");
@@ -43,10 +43,10 @@ const Profile = () => {
                 alt="icon" />
               <hr className="line"></hr>
               <h3 className="itemtitle">Estatísticas
-              <img
+              {/* <img
                 src={data}
                 className="iconmini"
-                alt="icon" />
+                alt="icon" /> */}
               </h3>  
               <h4 className="iteminfo">Coleção status</h4>
 

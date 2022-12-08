@@ -178,7 +178,7 @@ cursor: pointer;
 }
 
 .deletebuttom{
-       position: absolute;
+       /* position: static; */
     margin: 2.5vw;
     width: 15vw;
     height: 7vh;
