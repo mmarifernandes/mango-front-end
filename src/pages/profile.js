@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 import "./home.css";
-import { getDataEmail} from "../Model";
+import { getDataEmail } from "../Model";
 import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
-import Modal from '../components/modal';
 import { useParams } from "react-router-dom";
-
-
-
+import Progress from "../components/progress-bar";
 
 const Profile = () => {
-
-
-
-  const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState("");
   const navigate = useNavigate();
   let { email } = useParams();
-
 
   useEffect(() => {
     (async () => {
@@ -33,9 +25,9 @@ const Profile = () => {
     })();
   }, [email, item, navigate]);
 
-// console.log(email)
+  // console.log(email)
   const navigateCollection = () => {
-    navigate('/collection')
+    navigate("/collection");
   };
   return (
     <>
@@ -43,8 +35,6 @@ const Profile = () => {
       <div className="grid">
         {item && (
           <>
-
-         
             <div className="block1">
               <img
                 src={`data:image/png;base64,${item.user.imgperfil}`}
@@ -52,6 +42,9 @@ const Profile = () => {
                 alt="icon"
               />
               <hr className="line"></hr>
+              <h3 className="itemtitle">Estatísticas</h3>
+
+              <Progress count={item.total} goal={item.totalitem} />
             </div>
             <div className="info">
               <h1>{item.user.nome}'s profile</h1>
@@ -69,27 +62,28 @@ const Profile = () => {
             <div className="middle-block">
               <h1 className="collection">Collection</h1>
               <div className="items">
-              {item.dex.map((itens) => (
-                <div className="style-itens" key={itens.book.id}>
-                  <>
+                {item.dex.map((itens) => (
+                  <div className="style-itens" key={itens.book.id}>
                     <>
-                      <img
-                        src={`data:image/png;base64,${itens.img}`}
-                        className="img-item"
-                        alt="mango icon"
+                      <>
+                        <img
+                          src={`data:image/png;base64,${itens.img}`}
+                          className="img-item"
+                          alt="mango icon"
                         />
+                      </>
+                      <p>{itens.book.autor}</p>
+                      <p>{itens.book.titulo}</p>
                     </>
-                    <p>{itens.book.autor}</p>
-                    <p>{itens.book.titulo}</p>
-                  </>
-                </div>
-              ))}
+                  </div>
+                ))}
               </div>
-            <p onClick={navigateCollection} className="vermais">Ver coleção completa</p>
+              <p onClick={navigateCollection} className="vermais">
+                Ver coleção completa
+              </p>
             </div>
-          
-            <div className="block2">
-            </div>
+
+            <div className="block2"></div>
           </>
         )}
         {/* <button onClick={navigateCollection}>Ver coleção completa</button> */}

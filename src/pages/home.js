@@ -5,7 +5,8 @@ import { getDataLimited } from "../Model";
 import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import Modal from '../components/modal';
-
+import Progress from "../components/progress-bar"
+import axios from "axios";
 
 
 
@@ -31,6 +32,17 @@ const Home = () => {
   }, [item, navigate]);
 
 
+ let deletefunction = async (e) => {
+   try {
+      await axios.put(`http://localhost:5000/usuarios/delete`)
+      navigate("/auth");
+       } catch (error) {
+         return console.log(error);
+       }
+  }
+
+
+
   const navigateCollection = () => {
     navigate('/collection')
   };
@@ -38,7 +50,7 @@ const Home = () => {
     <>
       <Navbar />
       <div className="grid">
-        {item && (
+        {item !== "" && (
           <>
 
          
@@ -49,6 +61,10 @@ const Home = () => {
                 alt="icon"
               />
               <hr className="line"></hr>
+              <h3 className="itemtitle">Estatísticas</h3>
+              <h4 className="iteminfo">Coleção status</h4>
+                  <Progress count={item.total} goal={item.totalitem} />
+
             </div>
             <div className="info">
               <h1>{item.user.nome}'s profile</h1>
@@ -64,7 +80,7 @@ const Home = () => {
               </p>
             </div>
             <div className="middle-block">
-              <h1 className="collection">Collection</h1>
+              <h1 className="collection">Collection preview</h1>
               <div className="items">
               {item.dex.map((itens) => (
                 <div className="style-itens" key={itens.book.id}>
@@ -82,17 +98,18 @@ const Home = () => {
                 </div>
               ))}
               </div>
-            <p onClick={navigateCollection} className="vermais">Ver coleção completa</p>
-                        {/* <p onClick={navigate("/profile/marina@marina.com")} className="vermais">teste</p> */}
 
             </div>
+              <button className="botao1" onClick={navigateCollection}>Ver coleção completa </button>
+
               <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             <div className="block2">
+              <button onClick={deletefunction}>Apagar meu perfil</button>
             </div>
           </>
-        )}
-        {/* <button onClick={navigateCollection}>Ver coleção completa</button> */}
+        )} 
+       
       </div>
     </>
   );

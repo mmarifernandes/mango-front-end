@@ -115,7 +115,22 @@
 .botao{
     position: absolute;
     left: 70vw;
-    top: 40vh;
+    top: 43.5vh;
+    width: 20vw;
+    height: 70px;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+background: #9B84DE;
+border-radius: 5px;
+cursor: pointer;
+}
+
+
+.botao1{
+    position: absolute;
+    left: 70vw;
+    top: 33.5vh;
     width: 20vw;
     height: 70px;
     color: #fff;
@@ -148,4 +163,16 @@ cursor: pointer;
     margin-top: 5px;
     font-size: 12px;
     margin-left: 40%
+}
+
+.iteminfo{
+   margin-top: 2vh;
+   margin-left: 2vw;
+    margin-bottom: 4px;
+    font-weight: normal;
+}
+.itemtitle{
+       margin-top: 38vh;
+   margin-left: 2vw;
+
 }

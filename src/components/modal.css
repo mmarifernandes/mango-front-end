@@ -153,3 +153,12 @@
     padding: 10px;
 
 }
+
+.showimg{
+  width: 10vw;
+display: flex;
+  height: 30vh;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 10px;
+}

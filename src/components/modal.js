@@ -8,9 +8,9 @@ const Modal = ({ setIsOpen }) => {
   const [selected, setSelected] = useState([]);
   const [foto, setFoto] = useState([]);
   const [user, setUser] = useState([]);
+  // console.log(foto)
 
   useEffect(() => {
-
     async function getItens() {
       const res = await axios.get(`http://localhost:5000/dex/listAll`);
       setItem(res.data);
@@ -48,10 +48,9 @@ const Modal = ({ setIsOpen }) => {
           "content-type": "multipart/form-data",
         },
       };
-      //   console.log(nome, email, senha, {foto})
       await axios.post(`http://localhost:5000/dex/`, formData, config);
     } catch (error) {
-      return console.log(error);
+      return alert("Esse item já está na sua coleção!");
     }
   };
 
@@ -67,10 +66,15 @@ const Modal = ({ setIsOpen }) => {
             X
           </button>
           <div className="modalContent">
-            <form id="form" onSubmit={handleSubmit} encType="multipart/form-data">
+            <form
+              id="form"
+              onSubmit={handleSubmit}
+              encType="multipart/form-data"
+            >
               <select
                 name="userId"
                 onChange={(e) => setSelected(e.target.value)}
+                required
               >
                 <option value="0">Escolha um item</option>
                 {item.map((value) => (
@@ -86,16 +90,23 @@ const Modal = ({ setIsOpen }) => {
                 <input
                   type="file"
                   onChange={(e) => setFoto(e.target.files[0])}
+                  required
                 />
               </label>
-
+              {foto.length !== 0 && (
+                <img
+                  src={URL.createObjectURL(foto)}
+                  alt="icon"
+                  className="showimg"
+                />
+              )}
               {/* <button type="submit">Submit</button> */}
             </form>
           </div>
           <div className="modalActions">
             <div className="actionsContainer">
               <button className="deleteBtn" onClick={() => setIsOpen(false)}>
-                  Cancelar
+                Cancelar
               </button>
               <button className="cancelBtn" form="form" type="submit">
                 Enviar
