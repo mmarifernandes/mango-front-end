@@ -60,10 +60,9 @@ const Home = () => {
                 className="img-icon"
                 alt="icon"
               />
-              <hr className="line"></hr>
-              <h3 className="itemtitle">Estatísticas</h3>
-              <h4 className="iteminfo">Coleção status</h4>
-                  <Progress count={item.total} goal={item.totalitem} />
+              {/* <hr className="line"></hr> */}
+              <button className="botao" onClick={navigateCollection}>Ver coleção completa </button>
+              <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
 
             </div>
             <div className="info">
@@ -80,7 +79,13 @@ const Home = () => {
               </p>
             </div>
             <div className="middle-block">
-              <h1 className="collection">Collection preview</h1>
+
+               <div className="stats">
+              <h3 className="itemtitle">Estatísticas</h3>
+              <h4 className="iteminfo">Coleção status</h4>
+                  <Progress count={item.total} goal={item.totalitem} />
+              </div>
+              {/* <h1 className="collection">Collection preview</h1>
               <div className="items">
               {item.dex.map((itens) => (
                 <div className="style-itens" key={itens.book.id}>
@@ -97,12 +102,9 @@ const Home = () => {
                   </>
                 </div>
               ))}
-              </div>
+              </div> */}
 
             </div>
-              <button className="botao1" onClick={navigateCollection}>Ver coleção completa </button>
-
-              <button className="botao" onClick={() => setIsOpen(true)}>Adicionar a coleção</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             <div className="block2">
               <button className="deletebuttom" onClick={deletefunction}>Deletar conta</button>

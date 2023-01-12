@@ -96,50 +96,38 @@
      position: absolute;
     margin-left: 1vw;
     margin-top: 9vh;
-    width: 40%;
+    width: 60%;
     height: 20%;
     font-size: 15px;
 }
 
 .img-icon{
-    height: 14vw;
+    height: 22vw;
     width: 15vw;
+    object-fit: fill;
     margin-left: 2.5vw;
         margin-right: 2.5vw;
-        margin-top: 1.5vw;
+        margin-top: 2vw;
     border-radius: 10px;
     position: absolute;
     box-shadow: -6px 0px 0px 0px #3BB777;
 }
 
 .botao{
-    position: absolute;
-    left: 70vw;
-    top: 43.5vh;
-    width: 20vw;
-    height: 70px;
+    position: relative;
+    width: 6.5vw;
+    height: 60px;
     color: #fff;
     font-size: 15px;
     border: none;
 background: #9B84DE;
 border-radius: 5px;
 cursor: pointer;
+margin-top: calc(22vw + 4vw);
+margin-left: 2vw;
 }
 
 
-.botao1{
-    position: absolute;
-    left: 70vw;
-    top: 33.5vh;
-    width: 20vw;
-    height: 70px;
-    color: #fff;
-    font-size: 15px;
-    border: none;
-background: #9B84DE;
-border-radius: 5px;
-cursor: pointer;
-}
 
 .collection{
     font-size: 22px;
@@ -167,15 +155,10 @@ cursor: pointer;
 
 .iteminfo{
    margin-top: 2vh;
-   margin-left: 2vw;
     margin-bottom: 4px;
     font-weight: normal;
 }
-.itemtitle{
-       margin-top: 38vh;
-   margin-left: 2vw;
 
-}
 
 .deletebuttom{
        /* position: static; */
@@ -193,4 +176,10 @@ cursor: pointer;
     height: 2.5vh;
     width: 1.8vw;
     margin-bottom: -4px;
+}
+
+.stats{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
 }

@@ -41,15 +41,11 @@ const Profile = () => {
                 src={`data:image/png;base64,${item.user.imgperfil}`}
                 className="img-icon"
                 alt="icon" />
-              <hr className="line"></hr>
-              <h3 className="itemtitle">Estatísticas
-              {/* <img
-                src={data}
-                className="iconmini"
-                alt="icon" /> */}
-              </h3>  
+              {/* <hr className="line"></hr> */}
+              <div className="stats">
+              <h3 className="itemtitle">Estatísticas</h3>  
               <h4 className="iteminfo">Coleção status</h4>
-
+              </div>
               <Progress count={item.total} goal={item.totalitem} />
             </div>
             <div className="info">
