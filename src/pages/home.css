@@ -85,7 +85,13 @@
      margin-right: 5px
 }
 
+.info button{
+    position: absolute
+}
 
+.info form{
+    position: absolute;
+}
 .info h1{
     position: absolute;
     margin-left: 1vw;

@@ -16,6 +16,9 @@ const Home = () => {
 
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isBio, setIsBio] = useState(false);
+  const [bio, setBio] = useState("");
+
   const [item, setItem] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
@@ -42,6 +45,20 @@ const Home = () => {
   }
 
 
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let formData = new FormData();
+    
+      console.log(formData)
+      await axios.put(`http://localhost:5000/usuarios/bio`, {
+        bio: bio
+      });
+      return alert("Adicionado!");
+    } catch (error) {
+      return alert("Erro");
+    }
+  };
 
   const navigateCollection = () => {
     navigate('/collection')
@@ -68,15 +85,27 @@ const Home = () => {
             <div className="info">
               <h1>{item.user.nome}'s profile</h1>
               <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.{" "}
+               {item.user.bio}
               </p>
+              <button className="botao" onClick={() => setIsBio(true)}>Editar</button>
+              {isBio && 
+            <form
+              id="form"
+              onSubmit={handleSubmit}
+              encType="multipart/form-data"
+            >
+                <input
+                  type="text"
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
+                  required
+                />
+                <button type="submit">
+                Enviar
+              </button>
+            </form>
+              }
+
             </div>
             <div className="middle-block">
 
@@ -85,24 +114,7 @@ const Home = () => {
               <h4 className="iteminfo">Coleção status</h4>
                   <Progress count={item.total} goal={item.totalitem} />
               </div>
-              {/* <h1 className="collection">Collection preview</h1>
-              <div className="items">
-              {item.dex.map((itens) => (
-                <div className="style-itens" key={itens.book.id}>
-                  <>
-                    <>
-                      <img
-                        src={`data:image/png;base64,${itens.img}`}
-                        className="img-item"
-                        alt="mango icon"
-                        />
-                    </>
-                    <p>{itens.book.titulo}</p>
-                    <p>{itens.book.autor}</p>
-                  </>
-                </div>
-              ))}
-              </div> */}
+             
 
             </div>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
